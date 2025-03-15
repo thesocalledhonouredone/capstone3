@@ -31,13 +31,15 @@
                 <div class="col-md-6">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title"><%= post.title %></h5>
-                            <p class="card-text"><%= post.content %></p>
-                            <form action="/delete/<%= index %>" method="POST" class="d-inline">
-                                <button type="submit" class="btn btn-danger btn-sm">
-                                    <i class="bi bi-trash"></i> Delete
-                                </button>
-                            </form>
+                            <h5 class="card-title">
+                                <a href="/post/<%= index %>" class="text-decoration-none text-dark">
+                                    <%= post.title %>
+                                </a>
+                            </h5>
+                            <p class="card-text"><%= post.content.substring(0, 100) %>...</p>
+                            <a href="/post/<%= index %>" class="btn btn-primary btn-sm">
+                                <i class="bi bi-book"></i> Read More
+                            </a>
                         </div>
                     </div>
                 </div>
